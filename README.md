@@ -44,12 +44,32 @@ A Clinica Médica é uma solução WEB para o gerenciamento de atendimentos em u
       ~~~linux
       pip install psycopg2
       ~~~
-      
-  
+
+
+## __Execução do sistema__.
+
+### __Backend__
+
+- Executar API: Dentro da pasta do /backend faça:
+
+    ~~~linux
+    python3 -m uvicorn src.main:app --reload --host 0.0.0.0
+    ~~~
+
+### __Banco de dados__
+É válido que você não tenha o banco de dados utilizado nesta aplicação para executar seus teste, então:
+
+- No arquivo *backend/src/infra/sqlalchemy/config/config_db.py* está as configurações do banco de dados. Configure os dados necessários para que ele acesse o seu postgres.
+
+- No arquivo *backend/src/infra/sqlalchemy/config/database.py* é necessário descomentar a função de criação do banco de dados, a função *criar_bd*.
+
+
 ### FRONTEND
 
-## Execução do sistema.
+Edite o arquivo *api.dart* que está em */lib/api/api.dart*
 
-### BACKEND
+- Coloque o IP da máquina que está executando a API na variável __myIP__.
 
-### FRONTEND
+    ~~~linux
+    myIP = 'Coloque o IP da API':8000
+    ~~~
