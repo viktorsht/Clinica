@@ -92,6 +92,7 @@ class _ProfileUserState extends State<ProfileUser> {
         toolbarHeight: 100,
         elevation: 0,
         backgroundColor: AppColors.secundaryColorApp,
+        automaticallyImplyLeading: false,
         iconTheme: const IconThemeData(color: AppColors.primaryColorApp),
         title: const Text(
           'Clínica Médica', 

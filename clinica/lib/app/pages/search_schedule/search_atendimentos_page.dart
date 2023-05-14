@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 import '../../../theme/app_buttons.dart';
 import '../../../theme/app_colors.dart';
+import '../app_bar/app_bar.dart';
 import 'search_controller_atendimento.dart';
 import '../../components/loading/loading_page.dart';
 
@@ -89,21 +90,7 @@ class _SearchAtendimentosPageState extends State<SearchAtendimentosPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        toolbarHeight: 100,
-        backgroundColor: AppColors.secundaryColorApp,
-        iconTheme: const IconThemeData(color: AppColors.blackColorApp),
-        title: const Text(
-          'Clínica Médica', 
-          style: TextStyle(
-            color: AppColors.primaryColorApp,
-            fontWeight: FontWeight.bold,
-            fontSize: 40
-          ),
-        ),
-        centerTitle: true,
-      ),
+      appBar: const CustomAppBar(title: 'Clinica Médica'),
       body: AnimatedBuilder(
         animation: controller.state,
         builder:(context, child) => stateManager(controller.state.value),

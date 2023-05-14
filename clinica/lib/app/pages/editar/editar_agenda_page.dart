@@ -10,6 +10,7 @@ import '../../components/erro/erro.dart';
 import '../../components/loading/loading_page.dart';
 import '../../models/model_medico.dart';
 import '../agendar/components/agendar_model.dart';
+import '../app_bar/app_bar.dart';
 
 class EditarAgendaPage extends StatefulWidget {
   final AtendimentoModel atendimento;
@@ -209,21 +210,7 @@ class _EditarAgendaPageState extends State<EditarAgendaPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-        toolbarHeight: 100,
-        backgroundColor: AppColors.secundaryColorApp,
-        iconTheme: const IconThemeData(color: AppColors.blackColorApp),
-        title: const Text(
-          'Cadastro de Clientes', 
-          style: TextStyle(
-            color: AppColors.primaryColorApp,
-            fontWeight: FontWeight.bold,
-            fontSize: 45,
-          ),
-        ),
-        centerTitle: true,
-      ),
+      appBar: const CustomAppBar(title: 'Clinica Médica'),
       body: AnimatedBuilder(
         animation: medicoController.state,
         builder: (context, child) => stateManager(medicoController.state.value),

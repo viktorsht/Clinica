@@ -22,6 +22,7 @@ class _HomeState extends State<Home> {
         toolbarHeight: 100,
         elevation: 0,
         backgroundColor: AppColors.secundaryColorApp,
+        automaticallyImplyLeading: false,
         iconTheme: const IconThemeData(color: AppColors.primaryColorApp),
         title: const Text(
           'Clínica Médica', 
@@ -49,31 +50,31 @@ class _HomeState extends State<Home> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 HomeButtons(
-                  label: 'Cadastro de Clientes*', 
+                  label: 'Cadastro de Clientes', 
                   icon: Icons.people, 
                   onPressed:(){Navigator.of(context).pushNamed(RoutersApp.registerClientes);}
                 ),
                 const SizedBox(width: 16,),
                 HomeButtons(
-                  label: 'Buscar Cliente*', 
+                  label: 'Buscar Cliente', 
                   icon: Icons.person_search, 
                   onPressed:(){Navigator.of(context).pushNamed(RoutersApp.listarClientes);}
                 ),
                 const SizedBox(width: 16,),
                 HomeButtons(
-                  label: 'Agendar Consulta*', 
+                  label: 'Agendar Consulta', 
                   icon: Icons.border_color, 
                   onPressed:(){Navigator.of(context).pushNamed(RoutersApp.agendar);}
                 ),
                 const SizedBox(width: 16,),
                 HomeButtons(
-                  label: 'Consultas de Hoje*', 
+                  label: 'Consultas de Hoje', 
                   icon: Icons.today, 
                   onPressed:(){Navigator.of(context).pushNamed(RoutersApp.atendimentosHoje);}
                 ),
                 const SizedBox(width: 16,),
                 HomeButtons(
-                  label: 'Buscar Médico*', 
+                  label: 'Buscar Médico', 
                   icon: Icons.person_search, 
                   onPressed:(){Navigator.of(context).pushNamed(RoutersApp.listarMedicos);}
                 ),

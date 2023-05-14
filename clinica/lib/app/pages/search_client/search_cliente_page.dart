@@ -1,3 +1,4 @@
+import 'package:clinica/app/pages/app_bar/app_bar.dart';
 import 'package:clinica/app/pages/search_client/components/search_list_cliente.dart';
 import 'package:flutter/material.dart';
 
@@ -31,8 +32,6 @@ class _SearchClientePageState extends State<SearchClientePage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(Icons.search),
-                const SizedBox(width: 10,),
                 SizedBox(
                   width: 400,
                   child: TextFormField(
@@ -48,6 +47,8 @@ class _SearchClientePageState extends State<SearchClientePage> {
                     decoration: const InputDecoration(hintText: 'Digite um nome'),
                   ),
                 ),
+                const SizedBox(width: 10,),
+                const Icon(Icons.search),
               ],
             ),
           ),
@@ -118,21 +119,7 @@ class _SearchClientePageState extends State<SearchClientePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        toolbarHeight: 100,
-        backgroundColor: AppColors.secundaryColorApp,
-        iconTheme: const IconThemeData(color: AppColors.blackColorApp),
-        title: const Text(
-          'Clínica Médica', 
-          style: TextStyle(
-            color: AppColors.primaryColorApp,
-            fontWeight: FontWeight.bold,
-            fontSize: 25
-          ),
-        ),
-        centerTitle: true,
-      ),
+      appBar: const CustomAppBar(title: 'Clinica Médica'),
       body: AnimatedBuilder(
         animation: controller.state,
         builder:(context, child) => stateManager(controller.state.value),

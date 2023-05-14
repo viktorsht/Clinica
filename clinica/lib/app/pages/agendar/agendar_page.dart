@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 
 import '../../../theme/app_buttons.dart';
 import '../../../theme/app_colors.dart';
+import '../app_bar/app_bar.dart';
 import 'preparar_atendimento_controller.dart';
 import '../../components/erro/erro.dart';
 import '../../components/loading/loading_page.dart';
@@ -215,21 +216,7 @@ class _AgendarPageState extends State<AgendarPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-        toolbarHeight: 100,
-        backgroundColor: AppColors.secundaryColorApp,
-        iconTheme: const IconThemeData(color: AppColors.blackColorApp),
-        title: const Text(
-          'Cadastro de Clientes', 
-          style: TextStyle(
-            color: AppColors.primaryColorApp,
-            fontWeight: FontWeight.bold,
-            fontSize: 45,
-          ),
-        ),
-        centerTitle: true,
-      ),
+      appBar: const CustomAppBar(title: 'Clinica Médica'),
       body: AnimatedBuilder(
         animation: controllerPreparar.state,
         builder: (context, child) => stateManager(controllerPreparar.state.value),

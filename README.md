@@ -50,15 +50,9 @@ A Clinica Médica é uma solução WEB para o gerenciamento de atendimentos em u
 
 ## __Execução do sistema__.
 
-### __Backend__
+Siga os passos na ordem sugerida para uma boa experiencia com o sistema.
 
-- Executar API: Dentro da pasta do /backend faça:
-
-    ~~~linux
-    python3 -m uvicorn src.main:app --reload --host 0.0.0.0
-    ~~~
-
-### __Banco de dados__
+### __Passo 1: Banco de dados__
 É válido que você não tenha o banco de dados utilizado nesta aplicação para executar seus teste, então:
 
 - No arquivo *backend/src/infra/sqlalchemy/config/config_db.py* está as configurações do banco de dados. Configure os dados necessários para que ele acesse o seu postgres.
@@ -76,9 +70,7 @@ A Clinica Médica é uma solução WEB para o gerenciamento de atendimentos em u
     ~~~postgres
     sudo -u postgres psql clinica < clinica.sql
     ~~~
-
-
-### __Frontend__
+### Passo 2: __Frontend__
 
 Edite o arquivo *api.dart* que está em */lib/api/api.dart*
 
@@ -86,6 +78,14 @@ Edite o arquivo *api.dart* que está em */lib/api/api.dart*
 
     ~~~linux
     myIP = 'Coloque o IP da API':8000
+    ~~~
+
+### Passo 3: __Backend__
+
+- Executar API: Dentro da pasta do /backend faça:
+
+    ~~~linux
+    python3 -m uvicorn src.main:app --reload --host 0.0.0.0
     ~~~
 
 ## __Screenshots__

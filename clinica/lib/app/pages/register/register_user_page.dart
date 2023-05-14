@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../theme/app_buttons.dart';
 import '../../../theme/app_colors.dart';
+import '../app_bar/app_bar.dart';
 import 'register_controller.dart';
 import '../../models/model_register_cliente.dart';
 import '../../routers/routers_app.dart';
@@ -29,21 +30,7 @@ class _RegisterUserPageState extends State<RegisterUserPage> {
   Widget build(BuildContext context) {
     
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0.0,
-        toolbarHeight: 100,
-        backgroundColor: AppColors.secundaryColorApp,
-        iconTheme: const IconThemeData(color: AppColors.blackColorApp),
-        title: const Text(
-          'Cadastro de Clientes', 
-          style: TextStyle(
-            color: AppColors.primaryColorApp,
-            fontWeight: FontWeight.bold,
-            fontSize: 45,
-          ),
-        ),
-        centerTitle: true,
-      ),
+      appBar: const CustomAppBar(title: 'Clinica Médica'),
       body: Form(
         key: _formKey,
         child: Center(

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../../theme/app_buttons.dart';
 import '../../../theme/app_colors.dart';
+import '../app_bar/app_bar.dart';
 import 'search_controller_medico.dart';
 import '../../components/erro/erro.dart';
 import '../../components/loading/loading_page.dart';
@@ -31,8 +32,6 @@ class _SearchMedicoPageState extends State<SearchMedicoPage> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Icon(Icons.search),
-                const SizedBox(width: 10,),
                 SizedBox(
                   width: 400,
                   child: TextFormField(
@@ -48,6 +47,8 @@ class _SearchMedicoPageState extends State<SearchMedicoPage> {
                     decoration: const InputDecoration(hintText: 'Digite um nome'),
                   ),
                 ),
+                const SizedBox(width: 10,),
+                const Icon(Icons.search),
               ],
             ),
           ),
@@ -118,21 +119,7 @@ class _SearchMedicoPageState extends State<SearchMedicoPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: AppColors.secundaryColorApp,
-        toolbarHeight: 100,
-        iconTheme: const IconThemeData(color: AppColors.blackColorApp),
-        title: const Text(
-          'Clínica Médica', 
-          style: TextStyle(
-            color: AppColors.primaryColorApp,
-            fontWeight: FontWeight.bold,
-            fontSize: 25
-          ),
-        ),
-        centerTitle: true,
-      ),
+      appBar: const CustomAppBar(title: 'Clinica Médica'),
       body: AnimatedBuilder(
         animation: controller.state,
         builder:(context, child) => stateManager(controller.state.value),
