@@ -3,7 +3,6 @@ import 'package:clinica/app/pages/search_client/components/search_list_cliente.d
 import 'package:flutter/material.dart';
 
 import '../../../theme/app_buttons.dart';
-import '../../../theme/app_colors.dart';
 import 'search_controller.dart';
 import '../../components/erro/erro.dart';
 import '../../components/loading/loading_page.dart';
